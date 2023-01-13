@@ -9,7 +9,7 @@ from models import Summary
 def show_parse_data(data):
     try:
         data = Summary.parse_obj(result_data)
-        return data.dict()
+        return data.dict(by_alias=True)
 
     except ValidationError as e:
         return e.json()

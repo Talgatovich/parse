@@ -3,7 +3,6 @@ import pytest
 
 @pytest.fixture
 def result():
-
     result = {
      "address": "г Киров, ул Володарского, д 157",
      "allow_messages": True,
