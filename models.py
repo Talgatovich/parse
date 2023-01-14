@@ -16,7 +16,7 @@ class Phone(BaseModel):
 
 class Schedule(BaseModel):
     """График работы"""
-    id: str = "fullDay"
+    id: str
 
 
 class Contacts(BaseModel):
@@ -30,8 +30,8 @@ class Contacts(BaseModel):
         country = phone[0:1]
         city = phone[1:4]
         number = phone[4:7] + '-' + phone[7:9] + '-' + phone[9::]
-        num = Phone(country=country, city=city, number=number)
-        return num
+        phone_number = Phone(country=country, city=city, number=number)
+        return phone_number
 
 
 class SalaryRange(BaseModel):
@@ -48,15 +48,15 @@ class Experience(BaseModel):
 class Summary(BaseModel):
     """Резюме"""
     address: str
-    allow_messages: bool = True
-    billing_type: str = "packageOrSingle"
-    business_area: int = 1
+    allow_messages: bool
+    billing_type: str
+    business_area: int
     contacts: Contacts
     coordinates: Coordinates
     description: str
     experience: Experience
-    html_tags: bool = True
-    image_url: str = "https://img.hhcdn.ru/employer-logo/3410666.jpeg"
+    html_tags: bool
+    image_url: str
     name: str
     salary: int
     salary_range: SalaryRange
